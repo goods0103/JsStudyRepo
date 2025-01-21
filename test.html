@@ -1,22 +1,27 @@
+<!-- shift+alt+f-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="main.css" rel="stylesheet"> 
+    <link href="main.css" rel="stylesheet">
     <title>Document</title>
 </head>
+
 <body>
     <div id="id1" class="alert-box">
         asdsad
-        <button onclick="
-        document.getElementById('id1').style.display = 'none';" class="button">
+        <button onclick="buttonHandle('id1', 'none')" class="button">
             x
         </button>
     </div>
-    <button id="button" onclick="
-        document.getElementById('id1').style.display = 'block';">버튼</button>
+    <button id="button" onclick="buttonHandle('id1', 'block')">버튼</button>
     <script>
+        function buttonHandle(id, status){
+            document.getElementById(id).style.display = status;
+        }
     </script>
 </body>
+
 </html>
