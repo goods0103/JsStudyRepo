@@ -11,12 +11,19 @@
 
 <body>
     <div id="id1" class="alert-box">
-        asdsad
+        ID를 입력하세요
         <button onclick="buttonHandle('id1', 'none')" class="button">
             x
         </button>
     </div>
-    <button id="button" onclick="buttonHandle('id1', 'block')">버튼</button>
+    <div id="id2" class="alert-box">
+        PW를 입력하세요
+        <button onclick="buttonHandle('id2', 'none')" class="button">
+            x
+        </button>
+    </div>
+    <button id="button1" onclick="buttonHandle('id1', 'block')">버튼1</button>
+    <button id="button2" onclick="buttonHandle('id2', 'block')">버튼2</button>
     <script>
         function buttonHandle(id, status){
             document.getElementById(id).style.display = status;
