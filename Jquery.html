@@ -11,6 +11,9 @@
 <body>
     <button id="darkButton" class="badge bg-dark">Dark 🔄</button>
     <button id="button1">누르면 모달창이 나옴</button>
+    <div id="alert1" class="alert alert-danger">
+        <span>5</span>초 이내 구매시 사은품 증정
+    </div>
     <!-- 모달창 -->
     <div class="black-bg">
         <form action="success.html">
@@ -29,6 +32,21 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
         </script>
+    <!-- 1초마다 5라는 문자를 1씩 감소시켜봅시다. -->
+    <script>
+        let count2 = 5;
+            setInterval(() => {
+            if(count2>0){
+                count2--;
+                $('span').html(count2);
+            }
+        }, 1000);
+
+        setTimeout(function () {
+            // $('.alert').css('visibility', 'hidden');
+            $('.alert').hide();
+        }, 5000);
+    </script>
     <!-- 버튼 누른 횟수가 홀수면 버튼 내부 글자를 Light로 변경해주세요~, 버튼 누른 횟수가 짝수면 버튼 내부 글자를 Dark로 변경해주세요~ -->
     <script>
         var count = 0;
@@ -49,6 +67,7 @@
         });
     </script>
     <!-- 첫째 <input>에 입력한 값이 공백이면 alert('아이디입력하세요') 라고 안내문을 띄워보도록 합시다. -->
+    <!-- 폼 전송시 유저가 입력한 비번에 영어 대문자가 적어도 1개 있는지 검사해봅시다. 없으면 alert() 띄우거나 맘대로 합시다. -->
     <script>
         $('form').on('submit', function (e) {
 
@@ -60,7 +79,11 @@
                 e.preventDefault();
                 alert('pw는 6자 이상이여야합니다');
             }
-
+            else if(/[A-Z]/.test($('#pw').val())==false){
+                e.preventDefault();
+                console.log('hi');
+                alert('pw는 대문자가 하나이상포함되어있어야합니다');
+            }
         }) 
     </script>
 
