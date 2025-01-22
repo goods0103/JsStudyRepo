@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+    <button id="darkButton" class="badge bg-dark">Dark 🔄</button>
     <button id="button1">누르면 모달창이 나옴</button>
     <!-- 모달창 -->
     <div class="black-bg">
@@ -29,6 +29,19 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
         </script>
+    <!-- 버튼 누른 횟수가 홀수면 버튼 내부 글자를 Light로 변경해주세요~, 버튼 누른 횟수가 짝수면 버튼 내부 글자를 Dark로 변경해주세요~ -->
+    <script>
+        var count = 0;
+        $('#darkButton').on('click', function () {
+            count++;
+            if (count % 2 == 0) {
+                $('#darkButton').css('color', 'purple');
+            }
+            else {
+                $('#darkButton').css('color', 'white');
+            }
+        })
+    </script>
     <script>
         $('#button1').on('click', function () {
             $('.black-bg').toggleClass('show');
@@ -37,17 +50,17 @@
     </script>
     <!-- 첫째 <input>에 입력한 값이 공백이면 alert('아이디입력하세요') 라고 안내문을 띄워보도록 합시다. -->
     <script>
-        $('form').on('submit', function(e){
+        $('form').on('submit', function (e) {
 
             if ($('#id').val() == "" || $('#pw').val() == "") {
                 e.preventDefault();
                 alert('id 또는 pw 입력하세요');
             }
-            else if($('#pw').val().length < 6){
+            else if ($('#pw').val().length < 6) {
                 e.preventDefault();
                 alert('pw는 6자 이상이여야합니다');
             }
-            
+
         }) 
     </script>
 
