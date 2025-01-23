@@ -70,7 +70,8 @@
     <!-- 폼 전송시 유저가 입력한 비번에 영어 대문자가 적어도 1개 있는지 검사해봅시다. 없으면 alert() 띄우거나 맘대로 합시다. -->
     <script>
         $('form').on('submit', function (e) {
-
+            var pw = $('#pw').val();
+            console.log(pw);
             if ($('#id').val() == "" || $('#pw').val() == "") {
                 e.preventDefault();
                 alert('id 또는 pw 입력하세요');
@@ -79,9 +80,8 @@
                 e.preventDefault();
                 alert('pw는 6자 이상이여야합니다');
             }
-            else if(/[A-Z]/.test($('#pw').val())==false){
+            else if( /[A-Z]/.test(pw) == false){
                 e.preventDefault();
-                console.log('hi');
                 alert('pw는 대문자가 하나이상포함되어있어야합니다');
             }
         }) 
