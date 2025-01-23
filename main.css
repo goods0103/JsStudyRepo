@@ -37,3 +37,16 @@
   height : 400px;
   opacity : 1;
 }
+
+.slide-container {
+  width: 300vw;
+  transition: all 1s;
+  transform: translateX(-100vw);
+} 
+.slide-box {
+  width: 100vw;
+  float: left;
+}
+.slide-box img {
+  width: 100%;
+} 
